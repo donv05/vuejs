@@ -1,0 +1,37 @@
+// Abstracts file
+@use './abstracts/functions';
+@use './abstracts/mixins';
+@use './abstracts/variables';
+
+
+// Base
+@use './base/base';
+@use './base/animation';
+@use './base/typography';
+@use './base/utilities';
+
+// Component 
+
+// @use './components/button';
+// @use './components/composition' as *;
+// @use './components/feature-box';
+// @use './components/card';
+// @use './components/story';
+// @use './components/bg-video';
+// @use './components/form';
+// @use './components/popup';
+
+// Layout 
+
+// @use './layout/header';
+// @use './layout/grid';
+// @use './layout/footer';
+// @use './layout/navigation';
+
+
+// Page 
+// @use './pages/header' as *;
+// @use './pages/home' as *;
+
+
+//sass sass/main.scss css/style.css
