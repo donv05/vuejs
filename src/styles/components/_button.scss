@@ -28,6 +28,12 @@
         border-radius: 28px;
     }
 
+    &--dark {
+        color: $color-white;
+        background-color: $color-ocean-dark;
+        border-radius: 28px;
+    }
+
     &--primary {
         color: $color-white;
         background-color: $color-secondary-dark;
