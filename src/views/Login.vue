@@ -38,44 +38,19 @@
         password = ''
         // Lifecycle hook
         mounted () {
-            // console.log(this.$refs.pwd)
-            // var pwd = this.$refs.pwd as HTMLElement
-            //   console.log(pwd)
-            // pwd.addEventListener("keyup", function(event) {
-            //     if(event.keyCode === 13) {
-            //         console.log('Enter');
-            //     }
-            // })
             document.querySelectorAll('.form__input').forEach(item => {
                 item.addEventListener("keyup", (event: any)=> {
                 // item.addEventListener("keyup", function(event: any){    
-                if(event.keyCode === 13) {
-                    console.log('data')
-                    this.login()
-                }
-            })
-            // .addEventListener("keyup", function(event: any) {
-            //     // debugger
-            //     console.log(event)
-            //     if(event.keyCode === 13) {
-            //         console.log('Enter');
-            //     }
+                    if(event.keyCode === 13) {
+                        console.log('data')
+                        this.login()
+                    }
+                })
             })
         }
 
         created() {
-            // let name = document.getElementById("pwd")
-            // name?.addEventListener("keyup", (event)=> {
-            //     // if(event.keyCode === 13) {
-            //     //     console.log('Enter');
-            //     // }
-            // })
-            
-            // this.$refs.pwd.addEventListener("keyup", (event)=> {
-            //     if(event.keyCode === 13) {
-            //         console.log('Enter');
-            //     }
-            // })
+            console.log('')
         }
 
         public login() {

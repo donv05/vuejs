@@ -1,14 +1,10 @@
 <template>
+    <HeaderComponent></HeaderComponent>
     <div class="about">
         <h1 class="heading-primary about__heading">This is an about page</h1>
         <div>
             <ul class="list">
-                <li class="list__item" v-for="item in items.frameworks" :key="item.id">
-                    <span :class="{active: item.isUppercase}">{{item.name}}</span> 
-                    <span>Has published books: {{publishedBookMessage}}</span>
-                    <button class="btn btn--dark login-box__btn" @click="upperCase(item)">UpperCase</button>
-                
-                </li>
+                <TodoComponent :publishedBookMessage="publishedBook" @upperCase="upperCase" v-for="item in items.frameworks" :key="item.id" :lang="item"></TodoComponent>
             </ul>
             <button class="btn btn--green login-box__btn" @click="editedName">Edit</button>
         </div>
@@ -16,7 +12,14 @@
 </template>
 
 <script>
+    import HeaderComponent from './Header.vue'
+    import TodoComponent from './TodoItem.vue'
+
     export default {
+        components: {
+            HeaderComponent,
+            TodoComponent
+        },
         data() {
             return {
                 items: {
@@ -33,20 +36,23 @@
                         {name: 'Vue', id: '3',  isUppercase: false}
                     ],
                 },
-                password: 'pass'
+                password: 'pass',
+                publishedBook: ''
             }
         },
         created() {
-            console.log('init component')
+            // console.log('init component')
+            this.publishedBook = this.publishedBookMessage
+            console.log(this.publishedBook)
         },
         mounted() {
-            console.log('mounted')
+            // console.log('mounted')
         },
         updated() {
-            console.log('updated')
+            // console.log('updated')
         },
         unmounted() {
-            console.log('unmounted')
+            // console.log('unmounted')
         },
         methods: {
             editedName() {
@@ -72,10 +78,10 @@
     .about {
         max-width: 33.9rem;
         &__heading {
-        // color: $color-red-light;
+            
         }
     }
-    .list {
+    .list{
         &__item {
             display: grid;
             grid-template-columns: 1fr 1fr 10rem;

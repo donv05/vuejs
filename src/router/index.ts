@@ -37,8 +37,8 @@ const routes: Array<RouteRecordRaw> = [
 ];
 
 const router = createRouter({
-history: createWebHashHistory(),
-routes,
+    history: createWebHashHistory(),
+    routes,
 });
 
 router.beforeEach((to, from, next) => {
